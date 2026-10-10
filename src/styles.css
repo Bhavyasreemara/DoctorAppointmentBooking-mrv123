@@ -1,0 +1,484 @@
+:root {
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+  color: #14213d;
+  background: #f5f8fc;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(51, 102, 255, 0.08), transparent 30%),
+    #f5f8fc;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.navbar {
+  height: 72px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(255, 255, 255, 0.9);
+  border-bottom: 1px solid #e6ebf2;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(14px);
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.25rem;
+  font-weight: 800;
+}
+
+.brand-mark {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #2f6fed;
+  color: white;
+  font-weight: 800;
+}
+
+.nav-link {
+  color: #53627a;
+  font-weight: 600;
+}
+
+.hero {
+  padding: 72px 6% 48px;
+}
+
+.hero-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.eyebrow {
+  display: inline-block;
+  letter-spacing: 0.12em;
+  font-size: 0.76rem;
+  color: #2f6fed;
+  font-weight: 800;
+}
+
+.hero h1 {
+  max-width: 780px;
+  margin: 14px 0 16px;
+  font-size: clamp(2.25rem, 5vw, 4.2rem);
+  line-height: 1.04;
+}
+
+.hero p {
+  max-width: 720px;
+  color: #61708a;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.search-panel {
+  margin-top: 32px;
+  padding: 18px;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #e3e9f2;
+  border-radius: 20px;
+  box-shadow: 0 18px 60px rgba(36, 57, 86, 0.08);
+  display: grid;
+  grid-template-columns: 1.5fr 1fr auto;
+  gap: 14px;
+  align-items: end;
+}
+
+.container {
+  width: min(1120px, 88%);
+  margin: 0 auto;
+}
+
+.page-space {
+  padding-top: 36px;
+  padding-bottom: 60px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-group label {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #435069;
+}
+
+.field-group input,
+.field-group select,
+.field-group textarea {
+  width: 100%;
+  border: 1px solid #dbe2ec;
+  border-radius: 12px;
+  padding: 13px 14px;
+  outline: none;
+  background: #fbfcfe;
+  color: #14213d;
+}
+
+.field-group textarea {
+  resize: vertical;
+}
+
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  border-color: #2f6fed;
+  box-shadow: 0 0 0 3px rgba(47, 111, 237, 0.12);
+}
+
+.primary-btn,
+.secondary-btn {
+  border-radius: 12px;
+  padding: 13px 18px;
+  font-weight: 800;
+  transition: 0.2s ease;
+}
+
+.primary-btn {
+  border: none;
+  background: #2f6fed;
+  color: white;
+  box-shadow: 0 10px 24px rgba(47, 111, 237, 0.22);
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  background: #245dcc;
+}
+
+.secondary-btn {
+  border: 1px solid #d7dfeb;
+  background: white;
+  color: #2c436c;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.secondary-btn:hover {
+  border-color: #b7c3d5;
+  background: #f7faff;
+}
+
+.results-header {
+  margin: 24px 0;
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.results-header h2 {
+  margin: 6px 0 0;
+  font-size: 2rem;
+}
+
+.results-count {
+  color: #69758a;
+  font-weight: 700;
+}
+
+.doctor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding-bottom: 60px;
+}
+
+.doctor-card,
+.doctor-detail-card,
+.booking-card {
+  background: white;
+  border: 1px solid #e3e9f2;
+  border-radius: 20px;
+  box-shadow: 0 16px 50px rgba(36, 57, 86, 0.07);
+}
+
+.doctor-card {
+  overflow: hidden;
+}
+
+.doctor-image {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
+
+.doctor-card-body {
+  padding: 18px;
+}
+
+.card-top-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.verified-badge {
+  padding: 6px 9px;
+  border-radius: 99px;
+  background: #eaf3ff;
+  color: #2f6fed;
+  font-size: 0.74rem;
+  font-weight: 800;
+}
+
+.rating {
+  color: #9a6b00;
+  font-weight: 800;
+}
+
+.doctor-card h3 {
+  margin: 16px 0 6px;
+  font-size: 1.18rem;
+}
+
+.specialty,
+.detail-specialty {
+  color: #2f6fed;
+  font-weight: 800;
+}
+
+.muted {
+  margin: 8px 0;
+  color: #75839a;
+}
+
+.card-bottom {
+  margin-top: 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-bottom strong {
+  font-size: 1.08rem;
+}
+
+.empty-state {
+  margin: 30px 0 60px;
+  padding: 30px;
+  border: 1px dashed #ccd6e5;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.76);
+  color: #607089;
+  text-align: center;
+}
+
+.error-box {
+  display: grid;
+  gap: 14px;
+  justify-items: center;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #2f6fed;
+  font-weight: 800;
+}
+
+.doctor-detail-card {
+  padding: 22px;
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.detail-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 16px;
+}
+
+.detail-content h1 {
+  margin: 16px 0 8px;
+  font-size: clamp(2rem, 4vw, 3.2rem);
+}
+
+.detail-bio {
+  color: #61708a;
+  line-height: 1.7;
+  max-width: 720px;
+}
+
+.stats-row {
+  display: flex;
+  gap: 18px;
+  margin: 22px 0;
+}
+
+.stats-row > div {
+  min-width: 150px;
+  padding: 14px;
+  border-radius: 14px;
+  background: #f7faff;
+  border: 1px solid #e9eef6;
+}
+
+.stats-row strong,
+.stats-row span {
+  display: block;
+}
+
+.stats-row strong {
+  font-size: 1.2rem;
+}
+
+.stats-row span {
+  margin-top: 4px;
+  color: #77849a;
+  font-size: 0.86rem;
+}
+
+.booking-card {
+  margin: 24px 0 60px;
+  padding: 26px;
+}
+
+.section-heading h2 {
+  margin: 7px 0 8px;
+  font-size: 1.9rem;
+}
+
+.section-heading p {
+  margin: 0 0 24px;
+  color: #718096;
+}
+
+.appointment-form {
+  display: grid;
+  gap: 18px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.status-message {
+  border-radius: 12px;
+  padding: 13px 14px;
+  font-weight: 700;
+}
+
+.status-message.success {
+  background: #eaf8ef;
+  color: #18723a;
+}
+
+.status-message.error {
+  background: #fff0f0;
+  color: #b02a37;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.footer {
+  padding: 24px 6%;
+  border-top: 1px solid #e3e9f2;
+  background: white;
+  text-align: center;
+  color: #7b879a;
+}
+
+@media (max-width: 950px) {
+  .search-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 720px) {
+  .navbar {
+    padding: 0 5%;
+  }
+
+  .hero {
+    padding: 48px 5% 30px;
+  }
+
+  .container {
+    width: 90%;
+  }
+
+  .doctor-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-detail-card {
+    grid-template-columns: 1fr;
+  }
+
+  .detail-image {
+    height: 340px;
+  }
+
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-row {
+    flex-direction: column;
+  }
+}
